@@ -27,6 +27,7 @@ public class WebSecurityConfig {
                         .requestMatchers("/criar").permitAll()
                         .requestMatchers("/sair").permitAll()
                         .requestMatchers("/todo").permitAll()
+                        .requestMatchers("/render").permitAll()
                         .requestMatchers("/api/criar").permitAll()
                         .anyRequest().authenticated()
                 )

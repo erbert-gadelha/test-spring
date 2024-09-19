@@ -9,6 +9,9 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
 @RestController
 public class Index {
 
@@ -33,6 +36,9 @@ public class Index {
                     hiperText("registrar", "criar"),
                     hiperText("sair", "sair")));
     }
+
+
+
 
     static String hiperText(String text, String path) {
         return String.format("<a href=\"/%s\">%s</a>", path, text);
