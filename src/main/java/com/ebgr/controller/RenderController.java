@@ -1,6 +1,7 @@
 package com.ebgr.controller;
 
-import com.ebgr.controller.dto.RenderDTO;
+import com.ebgr.controller.dto.RenderRequest;
+import com.ebgr.controller.dto.RenderResponse;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.BufferedReader;
@@ -16,7 +17,7 @@ public class RenderController {
     }
 
     @PostMapping("/render")
-    String postRender (@ModelAttribute RenderDTO dto) {
+    RenderResponse postRender (@ModelAttribute RenderRequest dto) {
         //String description = "Camera (512) (5 0 0) (0 2 -10)\nAmbiental (255 255 255) (0.2)\nEsfera (1) (0 .35 0) (255 0 0) (1 0.1 1 1 1 1 1 1)";
 
         System.out.println(dto.description());
@@ -55,7 +56,7 @@ public class RenderController {
             e.printStackTrace();
         }
 
-        return output.toString();
+        return new RenderResponse(1, output.toString());
         //return "renderizado";
     }
 }
